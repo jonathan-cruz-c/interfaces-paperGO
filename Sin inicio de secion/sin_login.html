@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperGO - Todo para tu oficina</title>
+    <link rel="stylesheet" href="sin_login.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">paper<span>GO</span></div>
+            <div class="search-bar">
+                <div class="cont-lupa">
+                    <img src="imagenes/lupa.png" alt="lupa" class="search-icon" id="btn-buscar">
+                </div>
+                <input type="text" id="input-busqueda" placeholder="Buscar productos...">
+                <button id="btn-limpiar" class="btn-limpiar">X</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="login.html">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Nuevos productos cada semana</span>
+                <h1>Todo para <br> tu oficina <span>en un solo lugar</span></h1>
+                <a href="#productos"><button class="btn-primary">Ver productos</button></a>
+                <p class="parafo_des">Descubre nuestra colección de papelería premium, artículos de oficina y más. Envío gratis en compras mayores a $500.</p>
+            </div>
+            
+            <div class="hero-images-container">
+                <div class="img-box pink-brush">
+                    <img src="imagenes/pincel.png" alt="Pincel" class="pincel">
+                </div>
+                <div class="img-box tablet">
+                    <img src="imagenes/lapiz_dibujando.png" alt="Lapiz dibujando">
+                </div>
+                <div class="img-box books">
+                    <img src="imagenes/cuadernos.png" alt="Cuadernos">
+                </div>
+            </div>
+        </section>
+    
+        <section class="info-bar">
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/camion.png" alt="camion" class="img-icon">
+                </div>
+                <div>
+                    <strong>Envío gratis</strong>
+                    <p>En compras +$500</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/trajeta.png" alt="trajeta" class="img-icon">
+                </div>
+                <div>
+                    <strong>Pago seguro</strong>
+                    <p>Tarjeta y OXXO</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/audifonos.png" alt="audifonos" class="img-icon">
+                </div>
+                <div>
+                    <strong>Soporte 24/7</strong>
+                    <p>Atención al cliente</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="titulos" id="titulos">
+            <h2 id="titulo-productos">Productos destacados</h2>
+            <p class="subtitle">Los favoritos de nuestros clientes</p>
+        </section>
+    
+        <section id="productos" class="featured-products">
+            <div class="products-grid" id="grid-productos">
+            </div>
+        </section>
+    
+        <div class="contact-trigger">
+            <h1 class="contact-text1">¿Necesitas productos para tu empresa?</h1>
+            <h2 class="contact-text2">Ofrecemos descuentos especiales en compras por mayoreo. Contáctanos para una cotización personalizada.</h2>
+            <a href="#contacto"><button id="btn-contacto">Ver datos de contacto</button></a>
+        </div>
+
+        <div id="miModal" class="modal-sin-login">
+            <div class="modal-content">
+                <h2 class="modal-title">¡Atención!</h2>
+                <p class="modal-text">Necesitas iniciar sesión para ver detalles o añadir a favoritos.</p>
+                <a href="login.html" class="btn-modal">Ir al Login</a>
+                <button onclick="cerrarModal()" class="btn-modal-cerrar">Cerrar</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div id="contacto" class="footer-container">
+            <div class="footer-info">
+                <div class="logo-footer">paper<span class="logo-2">GO</span></div>
+                <p class="text-footer">Tu tienda de confianza para papelería y artículos de oficina. Calidad y variedad en un solo lugar.</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-enlaces-titulo">Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="#productos" class="footer-enlaces">Todos los productos</a></li>
+                    <li><a href="nosotros.html" class="footer-enlaces">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="contacto-titulo">Contacto</h4>
+                <div class="fila-contacto">
+                    <img src="imagenes/telefono.png" alt="Teléfono" class="conta-img">
+                    <p class="contactos">55 6767 6932</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/correo.png" alt="Correo" class="conta-img">
+                    <p class="contactos">soporte@papergo.com</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/ubicacion.png" alt="Ubicación" class="conta-img">
+                    <p class="contactos">Av. Principal 123, CDMX</p>
+                </div>
+            </div>
+            <div class="footer-hours">
+                <p>Horario: Lun - Vie, 9:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 paperGO. Todos los derechos reservados.</p>
+            <div class="legal">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sin_login.js"></script>
+</body>
+</html>

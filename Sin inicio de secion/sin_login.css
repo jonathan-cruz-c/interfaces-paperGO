@@ -1,0 +1,655 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F0EEEB;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-family: "Javanese Text", serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    font-family: "Javanese Text", serif;
+    color: #e91e63;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 25px;
+    border: 1px solid #b9b9b9;
+    padding: 5px 15px;
+    max-width: 345px;
+    width: 100%;
+}
+
+.cont-lupa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.cont-lupa:hover{
+    font-weight: bold;
+    background: #e7789dd2;
+}
+
+.cont-lupa:active{
+    font-weight: bold;
+    background: #e91e63;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+#input-busqueda{
+    font-size: 18px;
+    border-left: 1.5px solid #b9b9b9;
+    padding-left: 10px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+.btn-limpiar {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 17px;
+    color: #444444;
+    cursor: pointer;
+}
+
+.btn-limpiar:hover {
+    font-weight: bold;
+    color: #e7789dd2;
+}
+
+.btn-limpiar:active {
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+}
+
+.nav-links a:hover {
+    color: #e91e63;
+}
+
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 60px 8%;
+    background-color: #f4f4f4;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-family: "Javanese Text", serif;
+}
+
+.hero h1 span {
+    color: #e91e63;
+}
+
+.badge {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.btn-primary {
+    background: black;
+    color: white;
+    font-family: "Afacad", serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 15px;
+    width: 130px;
+    height: 45px;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+    font-weight: bold;
+    width: 140px;
+}
+
+.parafo_des{
+    margin-top: 10px;
+}
+
+/* IMÁGENES HERO */
+.hero-images-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.img-box {
+    background: #E9E8E4;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* imagen normal */
+.img-box img {
+    width: 60%;
+}
+
+/* caja grande (izquierda) */
+.pink-brush {
+    grid-row: span 2;
+    background: #E9E8E4;
+    width: 100%;
+    max-width: 300px;
+}
+
+.pink-brush img {
+    width: 70%;
+}
+
+/* INFO BAR */
+.info-bar {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 5%;
+    gap: 20px;
+}
+
+.info-item {
+    background: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.img-icon{
+    width: 28px;
+    height: 28px;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    background-color: #d9d9d9c4;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Titulo de productos*/
+.titulos{
+    padding: 0px 8%;
+    padding-top: 30px;
+}
+
+#titulo-productos{
+    font-size: 45px;
+    font-family: "Javanese Text", serif;
+    font-weight: 300;
+}
+
+.subtitle{
+    color: #4f5155;
+    font-family: "Afacad", serif;
+}
+
+/* PRODUCTOS */
+.featured-products {
+    padding: 0px 8%;
+    padding-bottom: 60px;
+}
+
+.no-encontrado {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #444444;
+    padding: 50px 0;
+    font-family: "Afacad", serif;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* TARJETA */
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.productos{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.name-pro{
+    color: #000000;
+    font-size: 1rem;
+    margin: 10px 0;
+    font-family: "Afacad", serif;
+    cursor: pointer;
+}
+
+.price {
+    color: #000000;
+    font-family: "Afacad", serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+    font-family: "Afacad", serif;
+    color: #979696;
+    font-size: 0.9rem;
+}
+
+.badges-container{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.badge-new{
+    background:black;
+    color:white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+}
+
+.badges-discount{
+    background:#E7566B;
+    color:white;
+    padding: 2px 8px;
+    font-size: 10px;
+    border-radius: 3px;
+}
+
+.icon-tra {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.send-truck {
+    width: 28px;
+    height: 28px;
+}
+
+.send-text{
+    font-family: "Afacad", serif;
+    color: #5C5F64;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.send-heart{
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.contact-trigger{
+    text-align: center;
+    background: black;
+    padding: 30px;
+}
+
+.contact-text1{
+    color: white;
+    margin-bottom: 15px;
+    font-family: "Javanese Text", serif;
+    font-weight: 300;
+}
+
+.contact-text2{
+    color: white;
+    margin-bottom: 15px;
+    font-family: "Afacad", serif;
+    font-weight: 300;
+}
+
+#btn-contacto {
+    background: #e91e63;
+    color: white;
+    font-family: "Afacad", serif;
+    font-size: 16px;
+    border: none;
+    padding: 10px 25px;
+}
+
+#btn-contacto:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* VENTANA MODAL */
+.modal-sin-login {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-title{
+    color: #000000;
+    font-family: "Javanese Text", serif;
+    margin-bottom: 15px;
+}
+
+.modal-text{
+    color: #444444;
+    font-family: "Afacad", serif;
+}
+
+.btn-modal {
+    background: #e91e63;
+    color: white;
+    font-family: "Afacad", serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-modal:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-modal-cerrar{
+    color: black;
+    display:block;
+    margin: 10px auto;
+    padding: 5px;
+}
+
+.btn-modal-cerrar:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #f4f4f4;
+    padding: 40px 8%;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.logo-footer{
+    color: #000000;
+    font-family: "Javanese Text", serif;
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.logo-2{
+    font-family: "Javanese Text", serif;
+    color: #e91e63;
+}
+
+.text-footer{
+    color: #444444;
+    font-family: "Afacad", serif;
+    margin-bottom: 15px;
+}
+
+.footer-links{
+    margin-left: 65px;
+}
+
+.footer-enlaces-titulo{
+    color: #000000;
+    font-family: "Afacad", serif;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.footer-enlaces{
+    text-decoration: none;
+    color: #444444;
+    font-family: "Afacad", serif;
+    margin-bottom: 15px;
+}
+.footer-enlaces:hover{
+    color: #e91e63;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacto-titulo{
+    color: #000000;
+    font-family: "Afacad", serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.fila-contacto {
+    display: flex;
+    align-items: center;
+}
+
+.conta-img{
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+}
+
+.contactos{
+    color: #444444;
+    font-family: "Afacad", serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.footer-hours{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444444;
+    font-family: "Afacad", serif;
+}
+
+.footer-bottom{
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #b9b9b9;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #000000;
+    font-family: "Afacad", serif;
+}
+
+.legal {
+    display: flex;
+    gap: 20px;
+}
+
+.legal a{
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s;
+}
+
+.legal a:hover{
+    color: #e91e63;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        padding: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-images-container {
+        grid-template-columns: 1fr;
+    }
+
+    .info-bar {
+        flex-direction: column;
+    }
+
+    #titulo-productos {
+        font-size: 32px;
+    }
+
+    /* FOOTER OPTIMIZADO */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-left: 0;
+    }
+
+    .fila-contacto {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
