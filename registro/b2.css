@@ -110,20 +110,6 @@ body {
     color: #e91e63;
 }
 
-.btn-login-nav {
-    background: #e91e63;
-    color: white !important;
-    padding: 8px 18px;
-    border-radius: 25px;
-    transition: 0.2s;
-}
-
-.btn-login-nav:hover {
-    background: #c2185b;
-    color: white !important;
-    transform: scale(1.02);
-}
-
 .register-main {
     flex: 1;
     display: flex;
