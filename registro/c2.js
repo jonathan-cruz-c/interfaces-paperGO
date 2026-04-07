@@ -103,14 +103,14 @@ if (showPasswordCheckbox && passwordInput && confirmInput) {
     });
 }
 
-// ========== REGISTRO ==========
+// ========== REGISTRO CON LOCALSTORAGE ==========
 const registerForm = document.getElementById('registerForm');
 if (registerForm) {
     registerForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
         const password = passwordInput.value;
         const confirmPassword = confirmInput.value;
         const termsCheckbox = document.getElementById('termsCheckbox');
@@ -136,8 +136,30 @@ if (registerForm) {
             return;
         }
         
+        // Verificar si el email ya está registrado
+        const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+        const usuarioExistente = usuarios.find(u => u.email === email);
+        
+        if (usuarioExistente) {
+            alert('❌ Este correo ya está registrado. Inicia sesión.');
+            return;
+        }
+        
+        // Guardar nuevo usuario
+        const nuevoUsuario = {
+            id: Date.now(),
+            nombre: nombre,
+            email: email,
+            password: password,
+            fechaRegistro: new Date().toISOString()
+        };
+        
+        usuarios.push(nuevoUsuario);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        
         alert(`✅ ¡Bienvenido ${nombre}!\nTu cuenta ha sido creada exitosamente.\n\nAhora inicia sesión con tu correo: ${email}`);
         
+        // Redirigir al login
         window.location.href = "../inicio%20de%20sesion/a.html";
     });
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperGO - Mis Favoritos</title>
+    <link rel="stylesheet" href="b5.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="location.href='../logueado/a.html'">paper<span>GO</span></div>
+            <div class="search-bar"><div class="cont-lupa"><img src="../Sin%20inicio%20de%20secion/imagenes/lupa.png" class="search-icon"></div><input type="text" id="input-busqueda" placeholder="Buscar productos..."><button id="btn-limpiar" class="btn-limpiar">X</button></div>
+            <ul class="nav-links">
+                <li><a href="../logueado/a.html">Inicio</a></li>
+                <li><a href="../logueado/a.html#productos">Productos</a></li>
+                <li><a href="../nosotros/a3.html">Nosotros</a></li>
+                <li><a href="../carrito/a4.html" class="cart-link">🛒 Carrito</a></li>
+                <li><a href="../favoritos/a5.html" class="fav-link">❤️ Favoritos</a></li>
+                <li><a href="../perfil/a6.html" class="profile-link">👤 Mi cuenta</a></li>
+                <li><a href="#" id="btnCerrarSesion" class="logout-link">🚪 Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="favorites-main">
+        <div class="favorites-container">
+            <h1 class="favorites-title">Mis Favoritos</h1>
+            <p class="favorites-subtitle">Productos que te han gustado</p>
+            <div class="favorites-grid" id="favoritesGrid"></div>
+            <div id="favoritosVacio" class="favorites-empty" style="display: none;"><p>❤️ No tienes productos favoritos</p><a href="../logueado/a.html#productos" class="btn-continue">Explorar productos</a></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info"><div class="logo-footer">paper<span class="logo-2">GO</span></div><p class="text-footer">Tu tienda de confianza para papelería y artículos de oficina. Calidad y variedad en un solo lugar.</p></div>
+            <div class="footer-links"><h4 class="footer-enlaces-titulo">Enlaces rápidos</h4><ul><li><a href="../logueado/a.html#productos" class="footer-enlaces">Todos los productos</a></li><li><a href="../nosotros/a3.html" class="footer-enlaces">Nosotros</a></li></ul></div>
+            <div class="footer-contact"><h4 class="contacto-titulo">Contacto</h4><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/telefono.png" class="conta-img"><p class="contactos">55 6767 6932</p></div><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/correo.png" class="conta-img"><p class="contactos">soporte@papergo.com</p></div><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/ubicacion.png" class="conta-img"><p class="contactos">Av. Principal 123, CDMX</p></div></div>
+            <div class="footer-hours"><p>Horario: Lun - Vie, 9:00 - 18:00</p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 paperGO. Todos los derechos reservados.</p><div class="legal"><a href="#">Privacidad</a><a href="#">Términos</a></div></div>
+    </footer>
+
+    <script src="c5.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperGO - Inicio</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo" id="logoPrincipal">paper<span>GO</span></div>
+            <div class="search-bar">
+                <div class="cont-lupa">
+                    <img src="../Sin%20inicio%20de%20secion/imagenes/lupa.png" alt="lupa" class="search-icon" id="btn-buscar">
+                </div>
+                <input type="text" id="input-busqueda" placeholder="Buscar productos...">
+                <button id="btn-limpiar" class="btn-limpiar">X</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="btnInicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Nosotros</a></li>
+                <li><a href="../carrito/a4.html" class="cart-link">🛒 Carrito</a></li>
+                <li><a href="../favoritos/a5.html" class="fav-link">❤️ Favoritos</a></li>
+                <li><a href="../perfil/a6.html" class="profile-link">👤 Mi cuenta</a></li>
+                <li><a href="#" id="btnCerrarSesion" class="logout-link">🚪 Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Nuevos productos cada semana</span>
+                <h1>Todo para <br> tu oficina <span>en un solo lugar</span></h1>
+                <a href="#productos"><button class="btn-primary">Ver productos</button></a>
+                <p class="parafo_des">Descubre nuestra colección de papelería premium, artículos de oficina y más. Envío gratis en compras mayores a $500.</p>
+            </div>
+            <div class="hero-images-container">
+                <div class="img-box pink-brush"><img src="../Sin%20inicio%20de%20secion/imagenes/pincel.png" alt="Pincel"></div>
+                <div class="img-box tablet"><img src="../Sin%20inicio%20de%20secion/imagenes/lapiz_dibujando.png" alt="Lapiz dibujando"></div>
+                <div class="img-box books"><img src="../Sin%20inicio%20de%20secion/imagenes/cuadernos.png" alt="Cuadernos"></div>
+            </div>
+        </section>
+        <section class="info-bar">
+            <div class="info-item"><div class="icon"><img src="../Sin%20inicio%20de%20secion/imagenes/camion.png" class="img-icon"></div><div><strong>Envío gratis</strong><p>En compras +$500</p></div></div>
+            <div class="info-item"><div class="icon"><img src="../Sin%20inicio%20de%20secion/imagenes/trajeta.png" class="img-icon"></div><div><strong>Pago seguro</strong><p>Tarjeta y OXXO</p></div></div>
+            <div class="info-item"><div class="icon"><img src="../Sin%20inicio%20de%20secion/imagenes/audifonos.png" class="img-icon"></div><div><strong>Soporte 24/7</strong><p>Atención al cliente</p></div></div>
+        </section>
+        <section class="titulos" id="titulos"><h2 id="titulo-productos">Productos destacados</h2><p class="subtitle">Los favoritos de nuestros clientes</p></section>
+        <section id="productos" class="featured-products"><div class="products-grid" id="grid-productos"></div></section>
+        <div class="contact-trigger"><h1 class="contact-text1">¿Necesitas productos para tu empresa?</h1><h2 class="contact-text2">Ofrecemos descuentos especiales en compras por mayoreo. Contáctanos para una cotización personalizada.</h2><a href="../nosotros/a3.html"><button id="btn-contacto">Ver datos de contacto</button></a></div>
+        
+        <div id="productoModal" class="producto-modal">
+            <div class="producto-modal-content">
+                <span class="close-modal" onclick="cerrarModalProducto()">&times;</span>
+                <div class="modal-producto-body">
+                    <img id="modalProductoImg" src="" class="modal-producto-img">
+                    <div class="modal-producto-info">
+                        <h2 id="modalProductoNombre"></h2>
+                        <p id="modalProductoDescripcion" class="modal-producto-descripcion">Producto de alta calidad ideal para tu oficina o estudio.</p>
+                        <div class="modal-producto-precio">
+                            <span id="modalProductoPrecio"></span>
+                            <span id="modalProductoPrecioAnterior" class="old-price"></span>
+                        </div>
+                        <div class="modal-producto-actions">
+                            <button id="modalBtnAgregarCarrito" class="btn-add-cart">🛒 Añadir al carrito</button>
+                            <button id="modalBtnFavorito" class="btn-fav-modal">🤍 Añadir a favoritos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="contacto" class="footer-container">
+            <div class="footer-info"><div class="logo-footer">paper<span class="logo-2">GO</span></div><p class="text-footer">Tu tienda de confianza para papelería y artículos de oficina. Calidad y variedad en un solo lugar.</p></div>
+            <div class="footer-links"><h4 class="footer-enlaces-titulo">Enlaces rápidos</h4><ul><li><a href="#productos" class="footer-enlaces">Todos los productos</a></li><li><a href="#contacto" class="footer-enlaces">Nosotros</a></li></ul></div>
+            <div class="footer-contact"><h4 class="contacto-titulo">Contacto</h4><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/telefono.png" class="conta-img"><p class="contactos">55 6767 6932</p></div><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/correo.png" class="conta-img"><p class="contactos">soporte@papergo.com</p></div><div class="fila-contacto"><img src="../Sin%20inicio%20de%20secion/imagenes/ubicacion.png" class="conta-img"><p class="contactos">Av. Principal 123, CDMX</p></div></div>
+            <div class="footer-hours"><p>Horario: Lun - Vie, 9:00 - 18:00</p></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 paperGO. Todos los derechos reservados.</p><div class="legal"><a href="#">Privacidad</a><a href="#">Términos</a></div></div>
+    </footer>
+
+    <script src="c.js"></script>
+</body>
+</html>
