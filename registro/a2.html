@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperGO - Crear Cuenta</title>
+    <link rel="stylesheet" href="b2.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="location.href='../Sin%20inicio%20de%20secion/sin_login.html'">paper<span>GO</span></div>
+            
+            <div class="search-bar">
+                <div class="cont-lupa">
+                    <img src="imagenes/lupa.png" alt="lupa" class="search-icon">
+                </div>
+                <input type="text" id="input-busqueda" placeholder="Buscar productos...">
+                <button id="btn-limpiar" class="btn-limpiar">X</button>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="../Sin%20inicio%20de%20secion/sin_login.html">Inicio</a></li>
+                <li><a href="../Sin%20inicio%20de%20secion/sin_login.html#productos">Productos</a></li>
+                <li><a href="../Sin%20inicio%20de%20secion/sin_login.html#contacto">Nosotros</a></li>
+                <li><a href="../inicio%20de%20sesion/a.html" class="btn-login-nav">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="register-main">
+        <div class="register-container">
+            <div class="register-card">
+                <h1 class="register-title">Crear cuenta</h1>
+                <p class="register-subtitle">Regístrate para empezar a comprar</p>
+
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="ejemplo@papergo.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required placeholder="••••••••">
+                        <small id="passwordStrength" class="password-strength"></small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="••••••••">
+                        <small id="confirmStrength" class="password-strength"></small>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="showPasswordCheckbox"> Mostrar contraseña
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termsCheckbox" required> Acepto <a href="#" class="terms-link">términos y condiciones</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-register">Registrarse</button>
+
+                    <p class="login-link">
+                        ¿Ya tienes cuenta? <a href="../inicio%20de%20sesion/a.html">Iniciar sesión</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="logo-footer">paper<span class="logo-2">GO</span></div>
+                <p class="text-footer">Tu tienda de confianza para papelería y artículos de oficina. Calidad y variedad en un solo lugar.</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-enlaces-titulo">Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="../Sin%20inicio%20de%20secion/sin_login.html#productos" class="footer-enlaces">Todos los productos</a></li>
+                    <li><a href="../Sin%20inicio%20de%20secion/sin_login.html#contacto" class="footer-enlaces">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="contacto-titulo">Contacto</h4>
+                <div class="fila-contacto">
+                    <img src="imagenes/telefono.png" alt="Teléfono" class="conta-img">
+                    <p class="contactos">55 6767 6932</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/correo.png" alt="Correo" class="conta-img">
+                    <p class="contactos">soporte@papergo.com</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/ubicacion.png" alt="Ubicación" class="conta-img">
+                    <p class="contactos">Av. Principal 123, CDMX</p>
+                </div>
+            </div>
+            <div class="footer-hours">
+                <p>Horario: Lun - Vie, 9:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 paperGO. Todos los derechos reservados.</p>
+            <div class="legal">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="c2.js"></script>
+</body>
+</html>
