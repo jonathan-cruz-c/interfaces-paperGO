@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperGO - Todo para tu oficina</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo" id="logoPrincipal">paper<span>GO</span></div>
+                <div class="search-bar">
+                    <div class="cont-lupa">
+                        <img src="imagenes/lupa.png" alt="lupa" class="search-icon" id="btn-buscar">
+                    </div>
+                    <input type="text" id="input-busqueda" placeholder="Buscar productos...">
+                    <button id="btn-limpiar" class="btn-limpiar">X</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" id="btnInicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Nosotros</a></li>
+                
+                <li class="admin-menu-container">
+                    <img src="imagenes/candado.png" alt="candado" class="link-icon-padlock" id="link-icon-padlock">
+                    <ul class="dropdown-admin" id="dropdown-admin">
+                        <li class="action-set" id="opc-agregar">Agregar producto</li>
+                        <li class="action-set" id="opc-editar">Editar producto</li>
+                        <li class="action-set" id="opc-eliminar">Eliminar producto</li>
+                    </ul>
+                </li>
+
+                <li><a href="../carrito/a4.html"><img src="imagenes/bolsa.png" alt="bolsa" class="links-icon-bag"></a></li>
+                <li><a href="../favoritos/a5.html"><img src="imagenes/corazon.png" alt="corazon" class="link-icon-img"></a></li>
+                <li><a href="../perfil/a6.html"><img src="imagenes/perfil.png" alt="perfil" class="link-icon-img"></a></li>
+                <li><img src="imagenes/salir.png" alt="salir" class="link-icon-img" id="btnCerrarSesion"></li>
+            </ul>
+        </nav>
+
+        <div id="modal-agregar-container" class="modal-overlay">
+            <div class="modal-agregar-content">
+                <button class="btn-cerrar-agre" id="btn-cerrar-agregar">X</button>
+                <h2 class="titulo-modal-admin">Agregar Nuevo Producto</h2>
+                
+                <form id="form-agregar-producto">
+                    <div class="input-group">
+                        <label class="form-label">Nombre del Producto *</label>
+                        <input type="text" id="add-nombre" required placeholder="Ej. Cuaderno Arrimo">
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Descripción</label>
+                        <textarea id="add-descripcion" placeholder="Describe el producto..."></textarea>
+                    </div>
+        
+                    <div class="input-group-row">
+                        <div class="input-group">
+                            <label class="form-label">Precio *</label>
+                            <input type="number" id="add-precio" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label class="form-label">Precio Anterior (Opcional)</label>
+                            <input type="number" min="1" id="add-precioAnterior">
+                        </div>
+                    </div>
+        
+                    <div class="input-group">
+                        <label class="form-label">Imagen del Producto *</label>
+                        <input type="file" id="add-imagen" accept="image/*" required>
+                    </div>
+        
+                    <div class="checkbox-group">
+                        <label class="checkbox-text"><input type="checkbox" id="add-envioGratis"> Envío Gratis</label>
+                        <label class="checkbox-text"><input type="checkbox" id="add-nuevo"> Etiqueta "Nuevo"</label>
+                    </div>
+        
+                    <div class="input-group">
+                        <label class="form-label">Descuento (Opcional)</label>
+                        <input type="number" id="add-descuento" min="0" max="100">
+                    </div>
+        
+                    <div class="modal-footer-btns">
+                        <button type="button" id="btn-cancelar-agregar" class="btn-secundario">Cancelar</button>
+                        <button type="submit" class="btn-primario">Guardar Producto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="modal-editar-container" class="modal-overlay-editar">
+            <div class="modal-content-editar">
+                <button class="btn-cerrar-edit" id="btn-cerrar-editar">X</button>
+                <h2 class="titulo-modal-admin">Editar Producto</h2>
+                
+                <div id="seccion-buscar-id" class="bloque-busqueda">
+                    <div class="grupo-input-edit">
+                        <label class="form-label">Ingresa el ID del producto:</label>
+                        <input type="number" id="edit-search-id" placeholder="Ej: 1">
+                    </div>
+                    <button type="button" id="btn-buscar-editar" class="btn-primario-editar">Buscar Producto</button>
+                </div>
+                <form id="form-editar-producto" class="form-edicion-oculto">
+                    <input type="hidden" id="edit-id-hidden">
+                    
+                    <div class="grupo-input-edit">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" id="edit-nombre" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="form-label">Descripción</label>
+                        <textarea id="edit-descripcion" placeholder="Describe el producto..."></textarea>
+                    </div>
+        
+                    <div class="fila-inputs-edit">
+                        <div class="grupo-input-edit">
+                            <label class="form-label">Precio *</label>
+                            <input type="number" id="edit-precio" required>
+                        </div>
+                        <div class="grupo-input-edit">
+                            <label class="form-label">Precio Anterior</label>
+                            <input type="number" id="edit-precioAnterior">
+                        </div>
+                    </div>
+        
+                    <div class="grupo-input-edit">
+                        <label class="form-label">Imagen (Opcional)</label>
+                        <input type="file" id="edit-imagen" accept="image/*">
+                        <div id="preview-edit-container" class="miniatura-edicion"></div>
+                    </div>
+        
+                    <div class="opciones-checkbox-edit">
+                        <label class="form-label"><input type="checkbox" id="edit-envioGratis"> Envío Gratis</label>
+                        <label class="form-label"><input type="checkbox" id="edit-nuevo"> Nuevo</label>
+                    </div>
+        
+                    <div class="grupo-input-edit">
+                        <label class="form-label">Descuento %</label>
+                        <input type="number" id="edit-descuento">
+                    </div>
+        
+                    <div class="footer-botones-edit">
+                        <button type="button" id="btn-cancelar-editar" class="btn-secundario-editar">Cancelar</button>
+                        <button type="submit" class="btn-primario-editar">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="modal-eliminar" class="modal-admin">
+            <div class="modal-admin-content">
+                <div class="modal-admin-header">
+                    <h2 class="titulo-modal-admin">Eliminar Producto</h2>
+                    <button class="btn-cerrar-elimi" id="cerrar-eliminar">X</button>
+                </div>
+                <div class="modal-admin-body">
+                    <div class="input-group">
+                        <label class="form-label">ID del producto a eliminar:</label>
+                        <input type="number" id="delete-id" placeholder="Ej: 1" required>
+                    </div>
+                </div>
+                <div class="modal-admin-footer">
+                    <button class="btn-secundario-elimi" id="cancelar-eliminar">Cancelar</button>
+                    <button class="btn-peligro-elimi" id="btn-confirmar-eliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Nuevos productos cada semana</span>
+                <h1>Todo para <br> tu oficina <span>en un solo lugar</span></h1>
+                <a href="#productos"><button class="btn-primary">Ver productos</button></a>
+                <p class="parafo_des">Descubre nuestra colección de papelería premium, artículos de oficina y más. Envío gratis en compras mayores a $500.</p>
+            </div>
+            
+            <div class="hero-images-container">
+                <div class="img-box pink-brush">
+                    <img src="imagenes/pincel.png" alt="Pincel" class="pincel">
+                </div>
+                <div class="img-box tablet">
+                    <img src="imagenes/lapiz_dibujando.png" alt="Lapiz dibujando">
+                </div>
+                <div class="img-box books">
+                    <img src="imagenes/cuadernos.png" alt="Cuadernos">
+                </div>
+            </div>
+        </section>
+    
+        <section class="info-bar">
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/camion.png" alt="camion" class="img-icon">
+                </div>
+                <div>
+                    <strong>Envío gratis</strong>
+                    <p>En compras +$500</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/trajeta.png" alt="trajeta" class="img-icon">
+                </div>
+                <div>
+                    <strong>Pago seguro</strong>
+                    <p>Tarjeta y OXXO</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon">
+                    <img src="imagenes/audifonos.png" alt="audifonos" class="img-icon">
+                </div>
+                <div>
+                    <strong>Soporte 24/7</strong>
+                    <p>Atención al cliente</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="titulos" id="titulos">
+            <h2 id="titulo-productos">Productos destacados</h2>
+            <p class="subtitle">Los favoritos de nuestros clientes</p>
+        </section>
+    
+        <section id="productos" class="featured-products">
+            <div class="products-grid" id="grid-productos">
+            </div>
+        </section>
+
+        <section>
+            <div class="contact-trigger" id="contact-trigger">
+                <h1 class="contact-text1">¿Necesitas productos para tu empresa?</h1>
+                <h2 class="contact-text2">Ofrecemos descuentos especiales en compras por mayoreo. Contáctanos para una cotización personalizada.</h2>
+                <a href="nosotros.html"><button id="btn-contacto">Ver datos de contacto</button></a>
+            </div>
+        </section>
+
+        <section>
+            <div class="modal-content" id="modal-content">
+                <div class="content-produc">
+                    <div class="modal-producto" id="modal-producto"></div>
+                </div>
+            </div>
+        </section>
+        <div id="notification-container" class="notification-container"></div>
+    </main>
+
+    <footer>
+        <div id="contacto" class="footer-container">
+            <div class="footer-info">
+                <div class="logo-footer">paper<span class="logo-2">GO</span></div>
+                <p class="text-footer">Tu tienda de confianza para papelería y artículos de oficina. Calidad y variedad en un solo lugar.</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-enlaces-titulo">Enlaces rápidos</h4>
+                <ul>
+                    <li><a href="#productos" class="footer-enlaces">Todos los productos</a></li>
+                    <li><a href="nosotros.html" class="footer-enlaces">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="contacto-titulo">Contacto</h4>
+                <div class="fila-contacto">
+                    <img src="imagenes/telefono.png" alt="Teléfono" class="conta-img">
+                    <p class="contactos">55 6767 6932</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/correo.png" alt="Correo" class="conta-img">
+                    <p class="contactos">soporte@papergo.com</p>
+                </div>
+                <div class="fila-contacto">
+                    <img src="imagenes/ubicacion.png" alt="Ubicación" class="conta-img">
+                    <p class="contactos">Av. Principal 123, CDMX</p>
+                </div>
+            </div>
+            <div class="footer-hours">
+                <p>Horario: Lun - Vie, 9:00 - 18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 paperGO. Todos los derechos reservados.</p>
+            <div class="legal">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>
